@@ -92,8 +92,10 @@ App = {
 
       return adoptionInstance.getAdopters.call();
     }).then(function(adopters) {
+      console.log('number of adopters is '+adopters.length);
       for (i = 0; i < adopters.length; i++) {
         if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
+          console.log('address '+adopters[i]+' adopts pet id '+i);
           $('.panel-pet').eq(i).find('button').text('Pending...').attr('disabled', true);
         }
       }
